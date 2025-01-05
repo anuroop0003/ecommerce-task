@@ -1,0 +1,33 @@
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import SnackbarState from "./types";
+
+const initialState: SnackbarState = {
+  open: false,
+  message: "",
+  severity: "info",
+};
+
+const snackbarSlice = createSlice({
+  name: "snackbar",
+  initialState,
+  reducers: {
+    showSnackbar: (
+      state,
+      action: PayloadAction<{
+        message: string;
+        severity?: "success" | "error" | "warning" | "info";
+      }>
+    ) => {
+      state.open = true;
+      state.message = action.payload.message;
+      state.severity = action.payload.severity || "info";
+    },
+    closeSnackbar: (state) => {
+      state.open = false;
+      state.message = "";
+    },
+  },
+});
+
+export const { showSnackbar, closeSnackbar } = snackbarSlice.actions;
+export default snackbarSlice.reducer;
