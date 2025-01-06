@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# Project Setup and Instructions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Environment Variables
 
-Currently, two official plugins are available:
+To set up the project, you'll need to define the following environment variable:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```env
+VITE_API_BASE_URL = https://dummyjson.com
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Make sure to add this in your `.env` file to connect the app with the mock API.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Login Credentials
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+You can use the following credentials to log in with different roles:
+
+### Admin Role:
+
+- **Username**: emilys
+- **Password**: emilyspass
+
+### User Role:
+
+- **Username**: abigailr
+- **Password**: abigailrpass
+
+or
+
+- **Username**: madisonc
+- **Password**: madisoncpass
+
+### Note:
+
+Due to the use of a mock API, only limited operations are available, and some features may not be fully functional without a proper backend.
