@@ -1,8 +1,8 @@
-import { Button, ButtonBaseProps } from "@mui/material";
+import { Button, ButtonProps } from "@mui/material";
 import button_loader from "../../assets/loader.svg";
 
-type Props = ButtonBaseProps & {
-  label: string;
+type Props = ButtonProps & {
+  label?: string;
   loading?: boolean;
 };
 

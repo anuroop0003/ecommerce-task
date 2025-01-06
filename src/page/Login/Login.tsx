@@ -2,7 +2,7 @@ import vector_image_1 from "../../assets/login/vector_1.svg";
 import vector_image_2 from "../../assets/login/Vector_2.svg";
 
 import "./Login.scss";
-import LoginForm from "./LoginForm";
+import LoginForm from "./LoginForm/LoginForm";
 
 export default function Login() {
   return (
