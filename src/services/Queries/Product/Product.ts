@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axiosInstance from "../../AxiosInstance";
 import { Methods, UseProductResponseType } from "./type";
 
@@ -36,6 +36,8 @@ export const useProduct = <T extends Methods>({
           }),
       }) as UseProductResponseType<T>;
     case "EDIT_PRODUCT":
+      const queryClient = useQueryClient();
+
       return useMutation({
         mutationKey: ["edit_product"],
         mutationFn: async (data) =>
@@ -44,6 +46,12 @@ export const useProduct = <T extends Methods>({
             method: "patch",
             data: JSON.stringify(data),
           }),
+        onSuccess: () => {
+          queryClient.invalidateQueries({
+            queryKey: ["list_products"],
+            exact: false,
+          });
+        },
       }) as UseProductResponseType<T>;
     case "DELETE_PRODUCT":
       return useMutation({
