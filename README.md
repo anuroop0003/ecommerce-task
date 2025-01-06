@@ -1,22 +1,34 @@
-For setup env variable is given below
+# Project Setup and Instructions
 
+## Environment Variables
+
+To set up the project, you'll need to define the following environment variable:
+
+```env
 VITE_API_BASE_URL = https://dummyjson.com
+```
 
-For Login, use follwing credentials
+Make sure to add this in your `.env` file to connect the app with the mock API.
 
-Admin Role Type:
+## Login Credentials
 
-username: emilys
-password: emilyspass
+You can use the following credentials to log in with different roles:
 
-User Role Type:
+### Admin Role:
 
-username: abigailr
-password: abigailrpass
+- **Username**: emilys
+- **Password**: emilyspass
+
+### User Role:
+
+- **Username**: abigailr
+- **Password**: abigailrpass
 
 or
 
-username: madisonc
-password: madisoncpass
+- **Username**: madisonc
+- **Password**: madisoncpass
 
-Due to lack of proper backend api i used mock api, so there is only limited proper operations
+### Note:
+
+Due to the use of a mock API, only limited operations are available, and some features may not be fully functional without a proper backend.
