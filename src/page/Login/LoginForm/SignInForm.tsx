@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import CustomButton from "../../../components/CustomButton/CustomButton";
 import CustomInput from "../../../components/CustomInput/CustomInput";
+import CustomPasswordInput from "../../../components/CustomPasswordInput/CustomPasswordInput";
 import { showSnackbar } from "../../../redux/slice/SnackbarSlice";
 import { useAuth } from "../../../services/Queries/Auth/Auth";
 import { signInSchema } from "../../../validation/Login";
@@ -97,7 +98,7 @@ export default function SignInForm({ setActiveTab }: Props) {
         name="password"
         control={control}
         render={({ field }) => (
-          <CustomInput
+          <CustomPasswordInput
             {...field}
             fullWidth
             label="Password"
